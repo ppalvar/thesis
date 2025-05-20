@@ -23,7 +23,10 @@
 \RequirePackage{csquotes}
 \RequirePackage[
 	style=apa,
-	citestyle=authoryear,
+	% citestyle=authoryear,
+  backend=bibtex,
+  style=numeric,
+  sorting=none,
   hyperref=true,
 	backref=true
 	]{biblatex}
@@ -74,17 +77,31 @@
 \renewcommand{\textfraction}{0.07}
 
 % Whole biblatex hyperref to bibliography
-\DeclareCiteCommand{\cite}
+% \DeclareCiteCommand{\cite}
+%   {\usebibmacro{prenote}}
+%   {\usebibmacro{citeindex}%
+%    \printtext[bibhyperref]{\usebibmacro{cite}}}
+%   {\multicitedelim}
+%   {\usebibmacro{postnote}}
+
+% \DeclareCiteCommand*{\cite}
+%   {\usebibmacro{prenote}}
+%   {\usebibmacro{citeindex}%
+%    \printtext[bibhyperref]{\usebibmacro{citeyear}}}
+%   {\multicitedelim}
+%   {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\cite}[\mkbibbrackets]
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
-   \printtext[bibhyperref]{\usebibmacro{cite}}}
+   \usebibmacro{cite}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
-\DeclareCiteCommand*{\cite}
+\DeclareCiteCommand*{\cite}[\mkbibbrackets]
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
-   \printtext[bibhyperref]{\usebibmacro{citeyear}}}
+   \usebibmacro{citeyear}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
@@ -220,7 +237,7 @@
     \vskip 2cm
     {\Large Autor: \textbf{\@author}} \\
     \vskip 0.5cm
-    {\Large Tutores: \textbf{\@advisor}} \\
+    {\Large Tutor: \textbf{\@advisor}} \\
     \vfill
     {\large Trabajo de Diploma \\presentado en opción al título de \\ \@degree} \\
     \vskip 1cm
@@ -241,6 +258,12 @@
 
 \def\backmatter{%
   \pagestyle{plain}
+}
+
+% Cambia el título de la bibliografía:
+\defbibheading{bibintoc}[\refname]{%
+    \chapter*{#1}%
+    \addcontentsline{toc}{chapter}{#1}%
 }
 
 % Created by Yasser González-Fernández <ygonzalezfernandez@gmail.com>
