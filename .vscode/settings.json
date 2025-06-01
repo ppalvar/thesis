@@ -23,5 +23,6 @@
         "**/*.bcf": true,
         "**/*.xml": true,
         "**/*.pdf_tex": true
-    }
+    },
+    "python.analysis.typeCheckingMode": "basic",
 }

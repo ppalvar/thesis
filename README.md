@@ -1,1 +1,1 @@
-# Latex template for students thesis of MatCom
+# Mejoramiento del contraste de tomograf´ıa de cr´aneo con transformada synchrosqueezed
