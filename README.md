@@ -1,1 +1,1 @@
-# Mejoramiento del contraste de tomograf´ıa de cr´aneo con transformada synchrosqueezed
+# Mejoramiento del contraste de tomograf´ıa de cráneo con transformada synchrosqueezed

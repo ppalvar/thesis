@@ -19,7 +19,6 @@
         "**/*.gz": true,
         "**/*.fdb_latexmk": true,
         "**/*.fls": true,
-        "**/*.py": true,
         "**/*.bcf": true,
         "**/*.xml": true,
         "**/*.pdf_tex": true
