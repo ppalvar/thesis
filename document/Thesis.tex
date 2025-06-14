@@ -54,9 +54,9 @@
 
 \lstset{style=mystyle}
 
-\title{Mejoramiento del contraste de tomografía de cráneo con transformada synchrosqueezed}
+\title{Mejoramiento del contraste de tomografía de cráneo con transformada \textit{synchrosqueezed}}
 \author{\\\vspace{0.25cm}Pedro Pablo Álvarez Portelles}
-\advisor{\\\vspace{0.25cm}Dr.C. Damian Valdés Santiago}
+\advisor{\\\vspace{0.25cm}Dr.C. Damian Valdés Santiago\\MSc. Lisbet Garzón Cutiño}
 \degree{Licenciado en Ciencia de la Computación}
 \faculty{Facultad de Matemática y Computación}
 \date{10 de junio de 2025\\\vspace{0.25cm}\href{https://github.com/ppalvar/thesis}{github.com/ppalvar/thesis}}
@@ -68,7 +68,6 @@
 \newcommand{\me}[1]{\mathrm{e}^{#1}}
 \newcommand{\pf}{\mathfrak{p}}
 \newcommand{\qf}{\mathfrak{q}}
-%\newcommand{\kf}{\mathfrak{k}}
 \newcommand{\kt}{\mathtt{k}}
 \newcommand{\mf}{\mathfrak{m}}
 \newcommand{\hf}{\mathfrak{h}}
@@ -77,8 +76,11 @@
 \newcommand{\minn}[1]{\min\left\{ #1 \right\} }
 \newcommand{\lldpcf}{1.25}
 \newcommand{\nnorm}[1]{\left\lvert #1 \right\rvert }
-\renewcommand{\lstlistingname}{Ejemplo de código}
-\renewcommand{\lstlistlistingname}{Ejemplos de código}
+
+\renewcommand{\lstlistoflistings}{} 
+\renewcommand{\lstlistlistingname}{} 
+\let\oldlstlistoflistings\lstlistoflistings
+\renewcommand{\lstlistoflistings}{\relax}
 
 \begin{document}
 
