@@ -1,3 +1,27 @@
 \begin{conclusions}
-    Conclusiones
+    El presente trabajo de diploma tuvo como objetivo general desarrollar un método numérico basado en la transformada Synchrosqueezed aplicada a Curvelets (SST-2DCT) para el mejoramiento del contraste en imágenes de tomografía computarizada (CT) de cráneo, con especial énfasis en la visualización de tejidos blandos y lesiones pequeñas sin necesidad de utilizar agentes de contraste radiológico. Este enfoque se planteó como una alternativa viable en contextos con restricciones de recursos computacionales y limitaciones en el acceso a grandes volúmenes de datos etiquetados, como es el caso del sistema de salud cubano.
+
+    \bigskip
+
+    A continuación, se exponen las principales conclusiones obtenidas, organizadas en correspondencia con los objetivos específicos propuestos:
+
+    \begin{enumerate}
+        \item \textbf{Implementación de la transformada SST-2DCT e ISST en Python 3.13:} Se logró desarrollar una implementación funcional y eficiente de la transformada Synchrosqueezed Curvelet y su inversa, adaptando herramientas de Octave mediante la interfaz \textit{oct2py}. Esta integración permitió la manipulación directa de imágenes en formato NIfTI y facilitó la ejecución de experimentos complejos en entornos de cómputo de propósito general.
+
+        \item \textbf{Diseño y ejecución de experimentos de mejora de características de imagen:} Se llevaron a cabo múltiples experimentos que aplicaron diferentes estrategias de modificación sobre la matriz de energía SST, tales como potenciación, umbralización y enmascaramiento. Entre todas las variantes evaluadas, la técnica basada en \textbf{Máscara Gaussiana con parámetros $\mu = N/2$ y $\delta = 1$} resultó ser la más adecuada, al lograr un equilibrio favorable entre el realce de estructuras anatómicas sutiles y la preservación de la calidad global de la imagen.
+
+        \item \textbf{Evaluación cuantitativa mediante métricas objetivas:} Los resultados fueron evaluados utilizando un conjunto de métricas agrupadas en tres categorías: mejora de contraste (CII, LSR, FSIM), distorsión (PSNR, SSIM, LPIPS) y detección de artefactos (RNS, BRISQUE). La \textbf{Máscara Gaussiana seleccionada} demostró un desempeño superior en la mejora del contraste y la definición de bordes sin introducir distorsiones o artefactos visuales significativos, manteniendo la integridad estructural de las imágenes.
+
+        \item \textbf{Comparación con métodos clásicos y modernos de mejoramiento de imágenes:} La solución propuesta mostró resultados competitivos frente a métodos tradicionales como el filtrado gaussiano, la ecualización de histograma y transformaciones homomórficas, superándolos en la preservación de detalles finos y en la reducción de artefactos. No obstante, en comparación con métodos basados en inteligencia artificial, la propuesta ofrece menores prestaciones en escenarios donde se dispone de grandes volúmenes de datos entrenados, aunque presenta la ventaja de no requerir entrenamiento previo ni bases de datos anotadas.
+
+        \item \textbf{Análisis de viabilidad en entornos con recursos limitados:} La solución desarrollada demostró ser viable para su implementación en contextos con restricciones computacionales, debido a su baja dependencia de hardware especializado y su menor complejidad en comparación con las técnicas de aprendizaje profundo. Sin embargo, \textbf{la principal limitación identificada radica en los tiempos de ejecución}, que oscilan entre \textbf{2 y 7 minutos por imagen} dependiendo de si la transformada SST ya ha sido calculada previamente o si debe computarse nuevamente desde cero, aspecto que podría representar una restricción en aplicaciones clínicas de tiempo real.
+    \end{enumerate}
+
+    \bigskip
+
+    \textbf{Conclusión general:} El método propuesto basado en la transformada Synchrosqueezed Curvelet constituye una alternativa efectiva y accesible para el mejoramiento del contraste en imágenes de tomografía computarizada de cráneo, especialmente útil en situaciones donde no es posible el uso de agentes de contraste o tecnologías de inteligencia artificial avanzadas. Los resultados obtenidos evidencian que es posible realzar detalles anatómicos clínicamente relevantes, como lesiones pequeñas y estructuras de bajo contraste, sin introducir artefactos visuales significativos ni comprometer la integridad de la imagen original.
+
+    En términos de impacto, la metodología desarrollada ofrece un marco numérico reproducible que puede ser utilizado como etapa previa al entrenamiento de modelos de aprendizaje profundo, contribuyendo a la reducción de la complejidad de estos modelos y potenciando su capacidad de generalización. Asimismo, sienta las bases para el desarrollo de sistemas híbridos que combinen las ventajas de los métodos numéricos y de la inteligencia artificial, aportando interpretabilidad y transparencia al proceso de diagnóstico asistido por computadora.
+
+    Finalmente, se reconoce que la técnica propuesta aún presenta limitaciones, como la necesidad de ajuste manual de parámetros experimentales y los tiempos de procesamiento relativamente elevados para cada imagen, aspectos que deberán ser abordados en trabajos futuros con vistas a mejorar su aplicabilidad en entornos clínicos exigentes.
 \end{conclusions}
